@@ -67,7 +67,7 @@ dmccullagh(x = 0.3, theta = -0.8, nu = 2.3)
 
 system.time(sim <- rmccullagh(n = 1000, theta = 0.2, nu = -0.15)) # it could take several seconds
 plot(ecdf(sim))
-curve(pmccullagh(q = x, theta = 0.2, nu = -0.15), add = T, col = "red", lwd = 2)
+curve(pmccullagh(q = x, theta = 0.2, nu = -0.15), add = TRUE, col = "red", lwd = 2)
 
 qmccullagh(p = 0.2, theta = 0, nu = 0.41, lower.tail = FALSE)
 }
