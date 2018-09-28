@@ -1,4 +1,4 @@
-<!--[![Travis build status](https://travis-ci.org/jiperezga/mccullagh.svg?branch=master)](https://travis-ci.org/jiperezga/mccullagh)-->
+[![Travis build status](https://travis-ci.org/jiperezga/mccullagh.svg?branch=master)](https://travis-ci.org/jiperezga/mccullagh)
 [![Licence](https://img.shields.io/badge/licence-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 # The McCullagh-Distribution
