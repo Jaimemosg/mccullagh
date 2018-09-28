@@ -1,0 +1,5 @@
+^README\.md$
+Makefile
+^mccullagh\.Rproj$
+^\.Rproj\.user$
+^\.travis\.yml$
