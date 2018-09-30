@@ -7,6 +7,6 @@ R package to calculate the density, the distribution function, the quantile func
 To install **mccullagh** package, use
 
 ```s
-if (!require("devtools")) install.packages("devtools")
+if(!require("devtools")) install.packages("devtools")
 devtools::install_github("jiperezga/mccullagh")
 ```
