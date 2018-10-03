@@ -35,24 +35,20 @@
 #' curve(pmccullagh(q = x, theta = 0.2, nu = -0.15), add = TRUE, col = "red", lwd = 2)
 #'
 #' qmccullagh(p = 0.2, theta = 0, nu = 0.41, lower.tail = FALSE)
-#' @name mccullagh
-#' @rdname mccullagh
+#' @name McCullagh
+#' @rdname McCullagh
 #' @export
 dmccullagh <- function(x, theta = 0, nu = 4, log = FALSE){
   if(x < -1 | x > 1) stop(return(0))
   if(theta <= -1 | theta >= 1) stop("theta must be between -1 and 1")
   if(nu <= -0.5) stop("nu must be greater than or equal to -0.5")
-  if(nu == 0){
-    d <- ((1 - (x^2))^(-0.5)) / beta(a = 0.5, b = 0.5)
-  } else {
-    d <- ((1 - (x^2))^(nu - 0.5)) / (((1 - (2 * theta * x) + theta^2)^nu) * beta(a = nu + 0.5, b = 0.5))
-  }
+  d <- ((1 - (x^2))^(nu - 0.5)) / (((1 - (2 * theta * x) + theta^2)^nu) * beta(a = nu + 0.5, b = 0.5))
   if(log) d <- log(d)
   return(d)
 }
 dmccullagh <- Vectorize(FUN = dmccullagh, vectorize.args = c("x", "theta", "nu"))
 
-#' @rdname mccullagh
+#' @rdname McCullagh
 #' @export
 pmccullagh <- function(q, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
   if(q <= -1) stop(return(0))
@@ -64,7 +60,7 @@ pmccullagh <- function(q, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
 }
 pmccullagh <- Vectorize(FUN = pmccullagh, vectorize.args = c("q", "theta", "nu"))
 
-#' @rdname mccullagh
+#' @rdname McCullagh
 #' @export
 qmccullagh <- function(p, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
   if(!log.p & (p < 0 | p > 1)) {print(NaN); stop("NaNs produced")}
@@ -77,7 +73,7 @@ qmccullagh <- function(p, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
 }
 qmccullagh <- Vectorize(FUN = qmccullagh, vectorize.args = c("p", "theta", "nu"))
 
-#' @rdname mccullagh
+#' @rdname McCullagh
 #' @export
 rmccullagh <- function(n, theta = 0, nu = 4){
   u <- runif(n)
@@ -85,3 +81,4 @@ rmccullagh <- function(n, theta = 0, nu = 4){
   return(r)
 }
 rmccullagh <- Vectorize(FUN = rmccullagh, vectorize.args = c("n", "theta", "nu"))
+
