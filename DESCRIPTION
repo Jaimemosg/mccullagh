@@ -1,7 +1,7 @@
 Package: mccullagh
 Type: Package
 Title: The McCullagh Distribution
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
             person("Perez,", "Jorge",, "jivan.perez@udea.edu.co", c("aut", "cre")), 
             person("Correa,", "Juan",, "jccorrea@unal.edu.co", c("aut"))
