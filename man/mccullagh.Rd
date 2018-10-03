@@ -6,6 +6,9 @@
 \alias{qmccullagh}
 \alias{rmccullagh}
 \title{The McCullagh Distribution}
+\source{
+Pavia, J. (2015). GoFKernel: Testing Goodness-of-Fit with the Kernel Density Estimator.
+}
 \usage{
 dmccullagh(x, theta = 0, nu = 4, log = FALSE)
 
@@ -31,7 +34,7 @@ rmccullagh(n, theta = 0, nu = 4)
 \item{n}{number of observations. If length(n) > 1, the length is taken to be the number required.}
 }
 \value{
-\code{dnorm} gives the density, \code{pnorm} gives the distribution function, \code{qnorm} gives the quantile function, and \code{rnorm} generates random deviates.
+\code{dmcullagh} gives the density, \code{pmccullagh} gives the distribution function, \code{qmccullagh} gives the quantile function, and \code{rmcculagh} generates random deviates.
 
 The length of the result is determined by \code{n} for \code{rnorm}, and is the maximum of the lengths of the numerical arguments for the other functions.
 
