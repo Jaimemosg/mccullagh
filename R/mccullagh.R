@@ -35,13 +35,18 @@
 #' curve(pmccullagh(q = x, theta = 0.2, nu = -0.15), add = TRUE, col = "red", lwd = 2)
 #'
 #' qmccullagh(p = 0.2, theta = 0, nu = 0.41, lower.tail = FALSE)
+#' @name mccullagh
 #' @rdname mccullagh
 #' @export
 dmccullagh <- function(x, theta = 0, nu = 4, log = FALSE){
   if(x < -1 | x > 1) stop(return(0))
   if(theta <= -1 | theta >= 1) stop("theta must be between -1 and 1")
   if(nu <= -0.5) stop("nu must be greater than or equal to -0.5")
-  d <- ((1 - (x^2))^(nu - 0.5)) / (((1 - (2 * theta * x) + theta^2)^nu) * beta(a = nu + 0.5, b = 0.5))
+  if(nu == 0){
+    d <- ((1 - (x^2))^(-0.5)) / beta(a = 0.5, b = 0.5)
+  } else {
+    d <- ((1 - (x^2))^(nu - 0.5)) / (((1 - (2 * theta * x) + theta^2)^nu) * beta(a = nu + 0.5, b = 0.5))
+  }
   if(log) d <- log(d)
   return(d)
 }
