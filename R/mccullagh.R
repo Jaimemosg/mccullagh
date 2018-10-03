@@ -44,7 +44,7 @@ dmccullagh <- function(x, theta = 0, nu = 4, log = FALSE){
   if(log) d <- log(d)
   return(d)
 }
-dmccullagh <- Vectorize(dmccullagh)
+dmccullagh <- Vectorize(FUN = dmccullagh, vectorize.args = c("x", "theta", "nu"))
 
 #' @rdname mccullagh
 #' @export
@@ -56,7 +56,7 @@ pmccullagh <- function(q, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
   if(log.p) p <- log(p)
   return(p)
 }
-pmccullagh <- Vectorize(pmccullagh)
+pmccullagh <- Vectorize(FUN = pmccullagh, vectorize.args = c("q", "theta", "nu"))
 
 #' @rdname mccullagh
 #' @export
@@ -69,7 +69,7 @@ qmccullagh <- function(p, theta = 0, nu = 4, lower.tail = TRUE, log.p = FALSE){
   q <- q.inv(p)
   return(q)
 }
-qmccullagh <- Vectorize(qmccullagh)
+qmccullagh <- Vectorize(FUN = qmccullagh, vectorize.args = c("p", "theta", "nu"))
 
 #' @rdname mccullagh
 #' @export
@@ -78,4 +78,4 @@ rmccullagh <- function(n, theta = 0, nu = 4){
   r <- qmccullagh(p = u, theta = theta, nu = nu)
   return(r)
 }
-rmccullagh <- Vectorize(rmccullagh)
+rmccullagh <- Vectorize(FUN = rmccullagh, vectorize.args = c("n", "theta", "nu"))
