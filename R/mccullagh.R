@@ -19,12 +19,13 @@
 #' @details \eqn{\kappa_4(X) = (-3 / [4 * (\nu + 1)^2 * (\nu + 2) ] ) * (1 - [4\nu * (3\nu - 1) * \theta^2] / [ (\nu + 1) * (\nu + 3) ] + ( [\nu (\nu - 1) * (11\nu^3 + 16\nu^2 - 17\nu + 2) * \theta^4] / [ (\nu + 1)^2 * (\nu + 2) * (\nu + 3) * (\nu + 4) ] ) )}
 #' @note Because the cumulative distribution function Mccullagh does not have a closed form, the values of the functions \code{pmcullagh}, \code{qmcullagh} and \code{rmcullagh} are obtained through the solution of systems of nonlinear equations, which could delay the algorithm.
 #' @note We will try to improve the times, especially in the function \code{rmccullagh}.
-#' @return \code{dnorm} gives the density, \code{pnorm} gives the distribution function, \code{qnorm} gives the quantile function, and \code{rnorm} generates random deviates.
+#' @return \code{dmcullagh} gives the density, \code{pmccullagh} gives the distribution function, \code{qmccullagh} gives the quantile function, and \code{rmcculagh} generates random deviates.
 #' @return The length of the result is determined by \code{n} for \code{rnorm}, and is the maximum of the lengths of the numerical arguments for the other functions.
 #' @return The numerical arguments other than \code{n} are recycled to the length of the result. Only the first elements of the logical arguments are used.
 #' @import GoFKernel
 #' @references McCullagh, P. (1989). Some statistical properties of a family of continuous univariate distributions. Journal of the American Statistical Association, 84(405), 125-129.
 #' @references Seshadri, V. (1991). A family of distributions related to the McCullagh family. Statistics & probability letters, 12(5), 373-378.
+#' @source Pavia, J. (2015). GoFKernel: Testing Goodness-of-Fit with the Kernel Density Estimator.
 #' @seealso \code{\link{Distributions}} for other standard distributions.
 #' @examples
 #' dmccullagh(x = 0.3, theta = -0.8, nu = 2.3)
